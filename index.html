@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JUNG ONE: The Garden</title>
+<meta name="description" content="A care conversation kit for families before care becomes crisis.">
+<meta property="og:title" content="JUNG ONE: The Garden">
+<meta property="og:description" content="A care conversation kit for families before care becomes crisis.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&family=Nanum+Myeongjo:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;}
+body{
+  font-family:'Crimson Pro','Noto Serif KR','Nanum Myeongjo','AppleMyungjo',Georgia,serif;
+  background:#F4EFE7;
+  color:#1a1612;
+  font-size:17px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.page{
+  max-width:580px;
+  margin:0 auto;
+  padding:64px 32px 80px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Hero */
+.hero{
+  margin-bottom:72px;
+  padding-top:24px;
+}
+.brand-mark{
+  font-size:11px;
+  letter-spacing:.22em;
+  color:#8a7e64;
+  text-transform:uppercase;
+  margin-bottom:24px;
+}
+h1{
+  font-size:clamp(32px,7vw,44px);
+  font-weight:500;
+  line-height:1.15;
+  letter-spacing:-.015em;
+  color:#111;
+  margin-bottom:24px;
+}
+.tagline{
+  font-size:17px;
+  line-height:1.7;
+  color:#4A3F2D;
+  font-style:italic;
+  max-width:380px;
+}
+
+/* Section blocks */
+.section{
+  margin-bottom:56px;
+}
+.section-label{
+  font-size:10.5px;
+  letter-spacing:.22em;
+  color:#8a7e64;
+  text-transform:uppercase;
+  margin-bottom:14px;
+  font-style:normal;
+  font-family:'Crimson Pro',sans-serif;
+  font-weight:500;
+}
+.section-body{
+  font-size:17px;
+  line-height:1.8;
+  color:#1A1A1A;
+}
+.section-body p{margin-bottom:14px;}
+.section-body p:last-child{margin-bottom:0;}
+
+/* How-it-works list */
+.steps{
+  list-style:none;
+  counter-reset:step;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.steps li{
+  counter-increment:step;
+  position:relative;
+  padding-left:36px;
+  font-size:16.5px;
+  line-height:1.65;
+  color:#1A1A1A;
+}
+.steps li::before{
+  content:counter(step,decimal-leading-zero);
+  position:absolute;
+  left:0;
+  top:2px;
+  font-family:'Crimson Pro',serif;
+  font-size:13px;
+  font-weight:500;
+  color:#8a7e64;
+  letter-spacing:.04em;
+}
+
+/* Two-line poetic block */
+.poetic{
+  border-left:1.5px solid #C8BFA8;
+  padding:6px 0 6px 22px;
+  font-style:italic;
+  color:#4A3F2D;
+  line-height:1.85;
+}
+
+/* Links / actions */
+.actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:8px;
+}
+.btn-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding:18px 22px;
+  background:transparent;
+  border:1px solid #111;
+  color:#111;
+  text-decoration:none;
+  font-family:inherit;
+  font-size:16px;
+  letter-spacing:-.005em;
+  cursor:pointer;
+  border-radius:2px;
+  transition:background .15s, color .15s;
+}
+.btn-link:hover{
+  background:#111;
+  color:#F4EFE7;
+}
+.btn-link.primary{
+  background:#111;
+  color:#F4EFE7;
+}
+.btn-link.primary:hover{
+  background:#2a2218;
+}
+.btn-link .arr{
+  font-family:'Crimson Pro',serif;
+  margin-left:14px;
+  opacity:.8;
+}
+.btn-link.muted{
+  border-color:#9A8B73;
+  color:#5A4F3D;
+}
+.btn-link.muted:hover{
+  background:#9A8B73;
+  color:#F4EFE7;
+}
+
+/* Footer */
+.foot{
+  margin-top:64px;
+  padding-top:32px;
+  border-top:1px solid #D9CFBE;
+  font-size:13px;
+  line-height:1.7;
+  color:#7A6E54;
+}
+.foot p{margin-bottom:6px;}
+.foot a{color:#5A4F3D;text-decoration:underline;text-underline-offset:3px;}
+
+/* Subtle entrance animation */
+.page > *{
+  opacity:0;
+  transform:translateY(10px);
+  animation:rise 0.8s cubic-bezier(.22,1,.36,1) forwards;
+}
+.page > *:nth-child(1){animation-delay:0s;}
+.page > *:nth-child(2){animation-delay:.1s;}
+.page > *:nth-child(3){animation-delay:.2s;}
+.page > *:nth-child(4){animation-delay:.3s;}
+.page > *:nth-child(5){animation-delay:.4s;}
+.page > *:nth-child(6){animation-delay:.5s;}
+.page > *:nth-child(7){animation-delay:.6s;}
+.page > *:nth-child(8){animation-delay:.7s;}
+@keyframes rise{
+  to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<main class="page">
+
+  <header class="hero">
+    <div class="brand-mark">정원 · The Garden</div>
+    <h1>A care conversation<br>kit for families.</h1>
+    <p class="tagline">Before care becomes crisis,<br>a small garden of questions.</p>
+  </header>
+
+  <section class="section">
+    <div class="section-label">What it is</div>
+    <div class="section-body">
+      <p>JUNG ONE: The Garden is a hybrid card-and-online conversation system for adult children and ageing parents.</p>
+      <p>It helps families open questions about care, distance, memory, responsibility, and personal boundaries — before urgent decisions turn them into crisis.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">How it works</div>
+    <ol class="steps">
+      <li>Choose a question</li>
+      <li>Attach a listening signal</li>
+      <li>Invite your family</li>
+      <li>Talk</li>
+      <li>Keep one chosen trace</li>
+      <li>Return to the garden</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Online &nbsp;·&nbsp; Offline</div>
+    <div class="poetic">
+      Online, a question becomes an invitation.<br>
+      Offline, a card conversation becomes a trace.<br>
+      Both return to the same garden.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Enter</div>
+    <div class="actions">
+      <a href="https://jj1lize-crypto.github.io/jungone/" class="btn-link primary">
+        <span>한국어 정원으로 들어가기</span><span class="arr">→</span>
+      </a>
+      <a href="https://jj1lize-crypto.github.io/jungone/en.html" class="btn-link">
+        <span>Enter the English Garden</span><span class="arr">→</span>
+      </a>
+      <a href="https://jj1lize-crypto.github.io/jungone/index-re.html" class="btn-link muted">
+        <span>Updated prototype (in progress)</span><span class="arr">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Support</div>
+    <div class="actions">
+      <a href="#" class="btn-link muted" onclick="alert('Crowdfunding page launching soon.'); return false;">
+        <span>Support the Project</span><span class="arr">→</span>
+      </a>
+      <a href="mailto:" class="btn-link muted">
+        <span>Contact</span><span class="arr">→</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>JUNG ONE: The Garden — a graduation project at Design Academy Eindhoven, Social Design MA.</p>
+    <p>2026 · This page is growing.</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
